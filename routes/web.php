@@ -18,3 +18,8 @@ Route::get('/', function () {
 Route::get('foo', function () {
     return 'Hello World';
 });
+
+// 第一引数に相対パス、第二引数に関数を指定する
+Route::get('/home', 'MemoController@showHome')->name('home');
+
+Route::get('/submit', 'MemoController@showSubmit')->name('submit');
