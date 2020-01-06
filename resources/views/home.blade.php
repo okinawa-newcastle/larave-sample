@@ -38,23 +38,16 @@
         メモ一覧
         <a href="{{ route('submit')}}" class="submit">メモを追加</a>
     </div>
+
     <table class="table">
         <tbody>
+            @foreach ($memos as $memo)
             <tr>
-                <td class="left">メモ１</td>
-                <td><a href="{{ route('submit')}}">編集</a></td>
+                <td class="left">{{$memo->title}}</td>
+                <td><a href="{{ route('submit', ['id' => $memo->id])}}">編集</a></td>
                 <td><a>削除</a></td>
             </tr>
-            <tr>
-                <td class="left">メモ２</td>
-                <td><a href="{{ route('submit')}}">編集</a></td>
-                <td><a>削除</a></td>
-            </tr>
-            <tr>
-                <td class="left">メモ３</td>
-                <td><a href="{{ route('submit')}}">編集</a></td>
-                <td><a>削除</a></td>
-            </tr>
+            @endforeach
         </tbody>
     </table>
 </div>
