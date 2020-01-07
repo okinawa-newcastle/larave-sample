@@ -33,6 +33,10 @@
         <input type="text" class="form-control" id="content" name="content" value="{{$memo->content}}">
     </div>
     <a href="{{ route('home')}}" class="btn btn-primary">戻る</a>
+    @if($memo->id == 0)
     <button type="submit" class="btn btn-success">追加</button>
+    @else
+    <button type="submit" class="btn btn-success">適用</button>
+    @endif
 </form>
 @endsection

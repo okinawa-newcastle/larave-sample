@@ -45,7 +45,7 @@
             <tr>
                 <td class="left">{{$memo->title}}</td>
                 <td><a href="{{ route('submit', ['id' => $memo->id])}}">編集</a></td>
-                <td><a>削除</a></td>
+                <td><a href="{{ route('delete', ['id' => $memo->id])}}">削除</a></td>
             </tr>
             @endforeach
         </tbody>

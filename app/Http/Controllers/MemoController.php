@@ -35,7 +35,19 @@ class MemoController extends Controller
                 'title' => $title,
                 'content' => $content
             ]);
+        } else {
+            $memo = Memo::find($id);
+            $memo->update([
+                'title' => $title,
+                'content' => $content
+            ]);
         }
+        return redirect()->route('home');
+    }
+
+    public function deleteMemo($id)
+    {
+        Memo::destroy($id);
         return redirect()->route('home');
     }
 }
